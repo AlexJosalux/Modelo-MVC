@@ -1,0 +1,108 @@
+:root {
+  --navy: #1f4e79;
+  --navy-dark: #12314f;
+  --red: #c00000;
+  --gray: #595959;
+  --bg: #f4f6f8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: #222;
+  margin: 0;
+}
+
+.navbar {
+  background: var(--navy);
+  color: #fff;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.container {
+  max-width: 960px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+h1 { color: var(--navy); }
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.btn-primary { background: var(--navy); color: #fff; }
+.btn-danger { background: var(--red); color: #fff; }
+.btn-secondary { background: #ddd; color: #222; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+th, td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: left;
+}
+
+th { background: var(--navy); color: #fff; }
+
+.badge {
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.badge-ok { background: #d4edda; color: #155724; }
+.badge-off { background: #f8d7da; color: #721c24; }
+
+.flash-success {
+  background: #d4edda;
+  color: #155724;
+  padding: 10px 16px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.form-group { margin-bottom: 14px; }
+label { display: block; font-weight: 600; margin-bottom: 4px; }
+input[type="text"], input[type="number"], textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.error-list {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 10px 16px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.footer {
+  text-align: center;
+  color: var(--gray);
+  font-size: 12px;
+  padding: 24px;
+}

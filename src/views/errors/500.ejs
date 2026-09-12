@@ -1,0 +1,6 @@
+<h1><%= title %></h1>
+<p><%= message %></p>
+<% if (typeof detail !== 'undefined' && detail) { %>
+  <p style="color:#888; font-size: 13px;">Detalle técnico (solo visible en desarrollo): <%= detail %></p>
+<% } %>
+<p><a class="btn btn-primary" href="/services">Volver al catálogo</a></p>

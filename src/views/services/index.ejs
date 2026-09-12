@@ -1,0 +1,46 @@
+<h1>Catálogo de servicios</h1>
+
+<% if (flash && flash.length) { %>
+  <div class="flash-success"><%= flash[0] %></div>
+<% } %>
+
+<p><a class="btn btn-primary" href="/services/new">+ Nuevo servicio</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Categoría</th>
+      <th>Precio</th>
+      <th>Disponible</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% services.forEach(function(service) { %>
+      <tr>
+        <td><%= service.id %></td>
+        <td><%= service.name %></td>
+        <td><%= service.category %></td>
+        <td><%= service.price !== null ? '$' + service.price : '-' %></td>
+        <td>
+          <% if (service.available) { %>
+            <span class="badge badge-ok">Sí</span>
+          <% } else { %>
+            <span class="badge badge-off">No</span>
+          <% } %>
+        </td>
+        <td>
+          <a class="btn btn-secondary" href="/services/<%= service.id %>">Ver</a>
+          <a class="btn btn-secondary" href="/services/<%= service.id %>/edit">Editar</a>
+          <form style="display:inline" method="POST" action="/services/<%= service.id %>?_method=DELETE"
+                onsubmit="return confirm('¿Eliminar este servicio?');">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+            <button class="btn btn-danger" type="submit">Eliminar</button>
+          </form>
+        </td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>
